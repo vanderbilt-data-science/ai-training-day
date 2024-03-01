@@ -13,7 +13,7 @@ First, establish an SSH connection to the DGX A100 server:
 
 ```bash
 ssh username@10.33.2.36
-
+```
 
 Replace `username` with your actual username on the DGX A100 server.
 
