@@ -1,5 +1,3 @@
-Below is a tutorial markdown file that you can use as a guide to fine-tune and perform inference on a Llama model using a DGX A100. This tutorial assumes you have access to a DGX A100 server and basic familiarity with command line operations.
-
 ```markdown
 # Fine-Tuning and Inference with LLaMA Model on DGX A100
 
@@ -16,7 +14,7 @@ First, establish an SSH connection to the DGX A100 server:
 
 ```bash
 ssh username@10.33.2.36
-```
+
 
 Replace `username` with your actual username on the DGX A100 server.
 
@@ -144,3 +142,4 @@ Congratulations! You have successfully fine-tuned and performed inference with a
 ```
 
 Make sure to replace `username` with your actual username and adjust paths or configurations as necessary for your specific environment.
+```
