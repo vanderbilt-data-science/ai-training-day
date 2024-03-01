@@ -138,6 +138,5 @@ python inference.py
 You should now see the model's generated text based on your input.
 
 Congratulations! You have successfully fine-tuned and performed inference with a LLaMA model on a DGX A100 server.
-```
 
 Make sure to replace `username` with your actual username and adjust paths or configurations as necessary for your specific environment.
