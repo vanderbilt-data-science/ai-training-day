@@ -1,4 +1,4 @@
-# Fine-Tuning and Inference with LLaMA Model on DGX A100
+# Multi-GPU Fine-Tuning and Inference with LLaMA 2 Model on DGX A100
 
 This tutorial will guide you through the steps to fine-tune and perform inference with the LLaMA model on a DGX A100 server.
 
