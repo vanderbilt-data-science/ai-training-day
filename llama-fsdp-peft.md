@@ -1,4 +1,3 @@
-```markdown
 # Fine-Tuning and Inference with LLaMA Model on DGX A100
 
 This tutorial will guide you through the steps to fine-tune and perform inference with the LLaMA model on a DGX A100 server.
@@ -142,4 +141,3 @@ Congratulations! You have successfully fine-tuned and performed inference with a
 ```
 
 Make sure to replace `username` with your actual username and adjust paths or configurations as necessary for your specific environment.
-```
