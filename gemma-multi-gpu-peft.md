@@ -1,6 +1,6 @@
 # Multi-GPU Fine-Tuning of Gemma on 8 DGX A100s
 
-This tutorial will guide you through the steps to fine-tune Gemma-7b on a DGX A100 server.
+This tutorial will guide you through the steps to fine-tune and inference Gemma-7b on a DGX A100 server.
 
 ## Prerequisites
 
@@ -119,4 +119,35 @@ docker commit <d4576eda8284/CONTAINER_ID> gemma_trl_ft
 6. To run the newly created container run:
 ```
 docker run --gpus all --net=host -it -v gemma_ft:/workspace/gemma_ft gemma_trl_ft
+```
+## Step 8: Inference on your fine tuned model: 
+
+1. Create an inferencing script:
+
+```
+touch inference.py
+vim inference.py >>>
+
+from peft import PeftConfig, PeftModel
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+base_model_name = "google/gemma-7b" #path/to/your/model/or/name/on/hub"
+adapter_model_name = "gemma-finetuned-openassistant"
+
+model = AutoModelForCausalLM.from_pretrained(base_model_name)
+model = PeftModel.from_pretrained(model, adapter_model_name) #combine peft adapters and base model
+
+tokenizer = AutoTokenizer.from_pretrained(base_model_name)
+
+device = "cpu"
+
+inputs = tokenizer.encode("This movie was really", return_tensors='pt').to(device)
+outputs = model.generate(inputs)
+print(tokenizer.decode(outputs[0]))
+```
+
+2. Run Inferencing Script:
+
+```
+python inference.py
 ```
