@@ -102,3 +102,21 @@ The script can be easily parallelized (or serialized) by tweaking the ```num_pro
 Congratulations! You have successfully fine-tuned Gemma on a DGX A100 server.
 
 Make sure to replace username with your actual username and adjust paths or configurations as necessary for your specific environment.
+
+## Step 7: Save Docker Container with all installed dependencies
+
+Any packages installed using pip will be lost once the docker container is ended. To avoid having to install dependencies each time, you can save a new image of your docker container with all the dependencies included. You may do this prior to step 6 as well. 
+
+1. Make a second SSH connection into the DGX.
+
+2. From the second connection, check running docker images by running `docker ps`. Note the CONTAINER_ID of the PyTorch container running in the other SSH connection.
+
+5. Run the following docker command to create a new image:
+```
+docker commit <d4576eda8284/CONTAINER_ID> gemma_trl_ft
+```
+
+6. To run the newly created container run:
+```
+docker run --gpus all --net=host -it -v gemma_ft:/workspace/gemma_ft gemma_trl_ft
+```
