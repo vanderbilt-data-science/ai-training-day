@@ -98,3 +98,7 @@ accelerate launch --config_file examples/accelerate_configs/multi_gpu.yaml --num
 ```
 
 The script can be easily parallelized (or serialized) by tweaking the ```num_processses``` flag to the number of GPUs on your machine. 
+
+Congratulations! You have successfully fine-tuned Gemma on a DGX A100 server.
+
+Make sure to replace username with your actual username and adjust paths or configurations as necessary for your specific environment.
