@@ -146,6 +146,8 @@ outputs = model.generate(inputs)
 print(tokenizer.decode(outputs[0]))
 ```
 
+In the above script, we first load the original model weights, and then combine the peft adapters and the base model. Note that this is different from what we saw in the notebook - using this method, we only save the peft adapters to the outputs folder which must be combined with the base model in order to inference. 
+
 2. Run Inferencing Script:
 
 ```
