@@ -19,7 +19,7 @@ Replace `username` with your actual username on the DGX A100 server.
 
 ## Step 2: Prepare the Environment
 
-Navigate to your preferred working directory and create a new directory for the LLaMA fine-tuning project:
+Navigate to your preferred working directory and create a new directory for the Gemma fine-tuning project:
 
 ```bash
 cd /raid/username
