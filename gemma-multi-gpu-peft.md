@@ -1,6 +1,6 @@
 # Multi-GPU Fine-Tuning of Gemma on 8 DGX A100s
 
-This tutorial will guide you through the steps to fine-tune and inference Gemma-7b on a DGX A100 server.
+This tutorial will guide you through the steps to fine-tune and inference Gemma-7b on a DGX A100 server. Note that these instructions are easily adapated to any server with availble GPUs. 
 
 ## Prerequisites
 
